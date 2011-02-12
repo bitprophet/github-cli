@@ -121,6 +121,7 @@ def create_edit_issue(issue=None, text=None):
         # \n on the command-line becomes \\n; undoing this:
         text = text.replace("\\n", "\n")
     else:
+        template = "# vim: set ft=mkd :\n" + template
         text = edit_text(template)
         if not text:
             raise Exception("can not submit an empty issue")
@@ -140,6 +141,7 @@ def create_comment(issue):
 #     votes:  %(votes)s
 #     state:  %(state)s
 #   created:  %(created_at)s""" % issue
+    inp = "# vim: set ft=mkd :\n" + inp
     out = edit_text(inp)
     if not out:
         raise Exception("can not submit an empty comment")
