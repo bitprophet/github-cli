@@ -24,7 +24,7 @@ setup(
     author_email = 'jhmsmits@gmail.com',
     packages = find_packages('src'),
     package_dir = {'': 'src'},
-    install_requires = ['setuptools', 'simplejson'],
+    install_requires = ['simplejson'],
     entry_points="""
     [console_scripts]
     ghi = github.issues:main
